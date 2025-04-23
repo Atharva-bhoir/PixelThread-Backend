@@ -6,10 +6,15 @@ import cors from 'cors';
 import sdRoutes from './routes/stablediffusion.routes.js';
 
 
+import dotenv from 'dotenv';
+
+dotenv.config(); // Load environment variables from .env file
+
 // Creating an instance of an Express application
 const app = express();
 // Defining the port on which the server will run, defaulting to 8080 if not specified in the environment variables
 const port =  8080;
+
 
 
 // Enabling CORS for all incoming requests

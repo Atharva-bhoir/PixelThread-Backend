@@ -9,10 +9,9 @@ const router = express.Router();// inbuild function ahe express madhe
 router.post('/', async (req, res) => {
     try {
       const { prompt } = req.body; // Get the prompt from the request body
-      const apiKey = 'uoQnYBs1wash715zRSJzAAlHfiu7Ze1Q4aW2goS6qVmUcMvpk2niIeA1g06N';
       // Send the request to the external API using Axios
       const response = await axios.post('https://modelslab.com/api/v6/realtime/text2img', {// main api la call karte
-        key: apiKey,
+        key: process.env.API_KEY,
         prompt: prompt,
         samples: '1',
         height: '1024',
